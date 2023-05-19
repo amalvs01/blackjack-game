@@ -1,5 +1,5 @@
-let firstCard = 10
-let secondCard = 4
+let firstCard =  getRandomCard()
+let secondCard =  getRandomCard()
 let cards= [firstCard ,secondCard]//array-- ordered list of items
 let sum = firstCard + secondCard 
 let hasBlackJack = false
@@ -7,16 +7,24 @@ let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")  // or ---> let sumEl = document.querySelector("#sum-el")
-let cardsEl = document.querySelector("#cards-el")
+let cardsEl = document.getElementById("cards-el")
+
+function getRandomCard(){
+  return 5
+}
 
 function start() {
     renderGame()
   }
 
-function renderGame(){
+function renderGame() {   
+  cardsEl.textContent = "Cards: "
+  for (let i = 0; i < cards.length; i++) {
+    cardsEl.textContent += cards[i] + " "
+  }
 
-  cardsEl.textContent = "cards: "+ cards[0] + " " + cards[1] // card(0index)
   sumEl.textContent ="Sum: " + sum 
+
   if (sum <= 20 ){
     message = "Do you want to draw a new card?"
   } else if (sum === 21){
@@ -30,9 +38,10 @@ function renderGame(){
 }
 
 function newCard(){
-let card = 6
+let card =  getRandomCard()
  sum += card
  cards.push(card)
  console.log(cards)
  renderGame()
-} 
+
+}
