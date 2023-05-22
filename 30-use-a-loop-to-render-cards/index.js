@@ -6,7 +6,7 @@ let hasBlackJack = false
 let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message-el")
-let sumEl = document.getElementById("sum-el")  // or ---> let sumEl = document.querySelector("#sum-el")
+let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function start() {
@@ -34,7 +34,7 @@ function renderGame() {
 }
 
 function newCard(){
-let card = 6
+ let card = 6
  sum += card
  cards.push(card)
  console.log(cards )
